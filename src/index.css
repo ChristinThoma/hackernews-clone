@@ -1,1 +1,27 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: 	
+    rgb(82,83,131);
+}
 
+.title {
+    margin-top: 5vh;
+    color: antiquewhite;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.search-bar {
+    margin-bottom: 5vh;
+    width: 450px;
+    height: 30px;
+}
+
+.news-div {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
