@@ -1,11 +1,11 @@
 import React from 'react';
 
 const News = (props) => {
-   return (
-       <div className="news-div">        
+    return (
+        <div className="news-div">
             <p>{props.title}</p>
-       </div>
-   )
+        </div>
+    )
 }
 
 export default News;
