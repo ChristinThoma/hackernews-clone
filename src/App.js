@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Header from "./Header";
+import Footer from "./Footer"
 import News from "./News";
 import mock from "./data/mock.json";
 
@@ -34,8 +35,9 @@ function App() {
     return (
         <div>
             <div><Header onEvent={handleInput}/></div>
-            <div>{data && searchFilter()}
+            <div class="news-body">{data && searchFilter()}
             </div>
+            <Footer />
         </div>
     );
 }
