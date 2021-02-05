@@ -57,8 +57,9 @@ body {
 
 .news-div {
     color: #5684BF;
-    width: 40%;
+    width: 60%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     justify-items: center;
     border: 1px solid white;
@@ -108,4 +109,8 @@ footer {
 
 footer i:hover {
     transform: scale(2);
+}
+
+.no-match-div {
+    min-height: 300px;
 }
