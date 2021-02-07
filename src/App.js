@@ -10,10 +10,27 @@ function App() {
     // const [input, setInput] = useState("");
     const [userSearch, setUserSearch] = useState("javaScript");
     const [showMoreButton, setShowMoreButton] = useState(false);
+    const [buttonId, setbuttonId]= useState("")
 
-    const clickShowMoreButton = () => {
-        setShowMoreButton(true)
+    const clickShowMoreButton = ({target}) => {
+        console.log(target.parentNode.id);
+        const allNews= document.querySelectorAll(".news-div");
+        // console.log(el);
+        // el.filter(ele=> ele.getAttribute("id")===target.parentNode.getAttribute("id"))
+        const clickedElement= document.getElementById(target.parentNode.id);
+        for (var el of allNews){
+            if(el.id===target.parentNode.id){
+                showMoreButton===false? setShowMoreButton(true): setShowMoreButton(false);
+            }
+        }
+        
+        
+        
+        
+    
     }
+
+
 
     //*****OLD VERSION USING MOCK DATA START******
     //const searchFilter = () => {
@@ -64,7 +81,7 @@ function App() {
     return (
         <div>
             <div><Header onEvent={handleInput}/></div>
-            <div className="news-body">{data && data.hits.map((hit) => <News key={hit.objectID} title={hit.title}
+            <div className="news-body">{data && data.hits.map((hit) => <News id={hit.objectID} title={hit.title}
                                                                              handleClick={clickShowMoreButton}
                                                                              showMore={showMoreButton}/>)}</div>
             <Footer/>
