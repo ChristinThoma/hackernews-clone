@@ -4,7 +4,7 @@ const ShowMore = (props) => {
     
     return (
         <div className="show-more">
-            <div>Autor</div>
+            <div>Author</div>
             <div>Date</div>
             <div>Link</div>
         </div>
