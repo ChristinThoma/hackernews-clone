@@ -2,20 +2,34 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import News from "./News";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import ShowMore from "./ShowMore";
+
 // import mock from "./data/mock.json";
 
 function App() {
-  const [data, setData] = useState(null);
-  // const [input, setInput] = useState("");
-  const [userSearch, setUserSearch] = useState("javaScript");
-  const [showMoreButton, setShowMoreButton] = useState(false);
+    const [data, setData] = useState(null);
+    // const [input, setInput] = useState("");
+    const [userSearch, setUserSearch] = useState("javaScript");
+    const [showMoreButton, setShowMoreButton] = useState(false);
+    const [buttonId, setbuttonId] = useState("")
 
-  const clickShowMoreButton = () => {
-    setShowMoreButton(true)
-  }
+    const clickShowMoreButton = ({target}) => {
+        console.log(target.parentNode.id);
+        //create new Div
+        const allNews = document.querySelectorAll(".news-div");
+        const clickedElement = document.getElementById(target.parentNode.id);
 
-
+        let testDiv = document.createElement('div')
+        testDiv.innerHTML = "Hello"
+        for (var newsEl of allNews) {
+            if (newsEl.id === target.parentNode.id) {
+                showMoreButton === false ? setShowMoreButton(true) : setShowMoreButton(false);
+                console.log(newsEl)
+                newsEl.insertAdjacentElement('beforeend', testDiv)
+                // el.insertAdjacentElement('beforeend', <ShowMore />)
+            }
+        }
+    }
 
   //*****OLD VERSION USING MOCK DATA START******
   //const searchFilter = () => {
@@ -70,7 +84,11 @@ function App() {
   )};
   export default App;
 
+/* <div>{mock.hits.map((hit) => <News title={hit.title}/>)}</div>
+<div>{data && data.hits.filter((hit) => hit.title.toLowerCase().includes(input)).map((hit) => <News title={hit.title}/>)}
+*/
+// const [searchMatch, setSearchMatch]= useState("");
+// useEffect(()=>{
 
-// /* /* <div>{mock.hits.map((hit) => <News title={hit.title}/>)}</div> */
-/* <div>{data && data.hits.filter((hit) => hit.title.toLowerCase().includes(input)).map((hit) => <News title={hit.title}/>)}
- */
+// }
+// )
