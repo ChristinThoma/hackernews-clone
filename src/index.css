@@ -2,11 +2,10 @@ body {
     text-rendering: optimizeLegibility;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    min-height:100%; 
-    position:relative; 
-    padding-bottom:200px;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 200px;
 }
-
 
 * {
     box-sizing: border-box;
@@ -71,10 +70,11 @@ body {
     border-radius: 5px;
     margin: 1%;
 }
+
 button {
     width: fit-content;
     background-color: #5684BF;
-    color:white;
+    color: white;
 }
 
 footer i {
@@ -87,30 +87,32 @@ footer {
     background-color: #5684BF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     font-size: 1.5em;
-    position: absolute; 
-    left: 0 ; right: 0; bottom: 0; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 200px;
 }
-footer p{
+
+footer p {
     display: block;
     margin: 0 auto;
     text-align: center;
     padding: 2em 0 1em 0;
 }
 
-.icons{
+.icons {
     display: flex;
-    justify-content: center; 
-
+    justify-content: center;
 }
 
-footer img{
+footer img {
     margin: 10%;
-    width:50px;
+    width: 50px;
 }
 
-footer img:hover{
-    width:48px
+footer img:hover {
+    width: 48px
 }
 
 .no-match-div {
