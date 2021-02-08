@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import News from "./News";
+import ShowMore from "./ShowMore";
 
 // import mock from "./data/mock.json";
 
@@ -10,10 +11,27 @@ function App() {
     // const [input, setInput] = useState("");
     const [userSearch, setUserSearch] = useState("javaScript");
     const [showMoreButton, setShowMoreButton] = useState(false);
+    const [buttonId, setbuttonId]= useState("")
 
-    const clickShowMoreButton = () => {
-        setShowMoreButton(true)
+    const clickShowMoreButton = ({target}) => {
+        console.log(target.parentNode.id);
+        //create new Div
+        const allNews= document.querySelectorAll(".news-div");
+        const clickedElement= document.getElementById(target.parentNode.id);
+
+        let testDiv= document.createElement('div')
+        testDiv.innerHTML="Hello"
+        for (var newsEl of allNews){
+            if(newsEl.id===target.parentNode.id){
+                showMoreButton===false? setShowMoreButton(true): setShowMoreButton(false);
+                console.log(newsEl)
+                newsEl.insertAdjacentElement('beforeend', testDiv)
+                // el.insertAdjacentElement('beforeend', <ShowMore />)
+            }
+        }
     }
+
+
 
     //*****OLD VERSION USING MOCK DATA START******
     //const searchFilter = () => {
@@ -55,16 +73,10 @@ function App() {
         console.log(data)
     }, [data])
 
-    // const [searchMatch, setSearchMatch]= useState("");
-    // useEffect(()=>{
-
-    // }
-    // )
-
     return (
         <div>
             <div><Header onEvent={handleInput}/></div>
-            <div className="news-body">{data && data.hits.map((hit) => <News key={hit.objectID} title={hit.title}
+            <div className="news-body">{data && data.hits.map((hit) => <News  id={hit.objectID} title={hit.title}
                                                                              handleClick={clickShowMoreButton}
                                                                              showMore={showMoreButton}/>)}</div>
             <Footer/>
@@ -77,3 +89,8 @@ export default App;
 /* <div>{mock.hits.map((hit) => <News title={hit.title}/>)}</div>
 <div>{data && data.hits.filter((hit) => hit.title.toLowerCase().includes(input)).map((hit) => <News title={hit.title}/>)}
 */
+    // const [searchMatch, setSearchMatch]= useState("");
+    // useEffect(()=>{
+
+    // }
+    // )
