@@ -69,12 +69,14 @@ body {
     box-shadow: 0 0 5px #5684BF;
     border-radius: 5px;
     margin: 1%;
+    text-align: center;
 }
 
 button {
     width: fit-content;
     background-color: #5684BF;
     color: white;
+    margin: 0 auto;
 }
 
 footer i {
@@ -117,4 +119,8 @@ footer img:hover {
 
 .no-match-div {
     min-height: 300px;
+}
+
+.show-more{
+    text-align: center;
 }

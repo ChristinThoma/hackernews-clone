@@ -7,7 +7,7 @@ const News = (props) => {
             <p>{props.title}</p>
             <button onClick={props.handleClick}>{props.showMore ? "Show less" : "Show more!"}</button>
             <br/>
-            {props.showMore && <ShowMore allProps={props.allProps}/>}
+            {props.showMore && <ShowMore link={props.link} author={props.author}/>}
         </div>
     )
 }
