@@ -1,7 +1,6 @@
 import React from "react";
 import companyLogo from "./img/HackMack_sm.png";
 
-
 const Header = (props) => {
     return (
         <header className="header">
