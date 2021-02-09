@@ -4,7 +4,6 @@ import InstagramIcon from "./img/Logos_1-02.png";
 import TwitterIcon from "./img/Logos_1-03.png";
 import PinterestIcon from "./img/Logos_1-04.png";
 
-
 const Footer = (props) => {
     return (
         <footer className="footer">
